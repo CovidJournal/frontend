@@ -45,7 +45,7 @@ jobs:
           node-version: 14
 
       - name: Caching NPM
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
@@ -56,7 +56,7 @@ jobs:
         run: npm ci
 
       - name: Caching Nuxt Build
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.5
         with:
           path: ./node_modules/.cache
           key: ${{ runner.os }}-nuxt-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/nuxt.config.json') }}
